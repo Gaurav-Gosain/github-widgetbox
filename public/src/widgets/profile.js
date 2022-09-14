@@ -11,6 +11,7 @@ const card_1 = __importDefault(require("../components/card"));
 const user_stats_fetcher_1 = __importDefault(require("../fetchers/user-stats-fetcher"));
 async function profileWidget(username, data) {
     const dataOptions = data.split(',');
+    console.log(`[Profile Widget] Fetching data for ${username}`);
     // Return error if dataOptions argument is undefined
     if (dataOptions === undefined) {
         return new Promise((res) => {
@@ -28,6 +29,7 @@ async function profileWidget(username, data) {
     async function getDataOptions() {
         let dataBoxes = '';
         const profile = await (0, user_stats_fetcher_1.default)(process.env.GITHUB_TOKEN, username);
+        console.log(profile);
         const stargazers = [];
         profile.data.user.repositories.nodes.forEach((repo, index) => {
             stargazers[index] = repo.stargazers.totalCount;
@@ -88,10 +90,10 @@ async function profileWidget(username, data) {
                                             <image width="200" height="200" xlink:href="data:image/jpeg;base64,${avatar}"/>
                                         </pattern>
                                     </defs>
-                                    ${(0, card_1.default)(width, height, '#FFFFFF')}
+                                    ${(0, card_1.default)(width, height, '#18191A')}
                                     <g id="profile-card">
                                         <rect id="profile-image" width="65" height="65" rx="30" transform="translate(52 47)" fill="url(#pattern)"/>
-                                        <text id="text-name" data-name="text-name" transform="translate(145 78)" font-size="26" font-family="Roboto-Medium, Roboto, sans-serif" font-weight="500"><tspan x="0" y="0">${response.data.name === null
+                                        <text id="text-name" fill="#E4E6EB" data-name="text-name" transform="translate(145 78)" font-size="26" font-family="Roboto-Medium, Roboto, sans-serif" font-weight="500"><tspan x="0" y="0">${response.data.name === null
             ? response.data.login
             : response.data.name}</tspan></text>
                                         <text id="text-url" data-name="text-url" transform="translate(145 102)" fill="#bfbfbf" font-size="16" font-family="Roboto-Regular, Roboto, sans-serif"><tspan x="0" y="0">GitHub.com/${response.data.login}</tspan></text>
