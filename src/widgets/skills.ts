@@ -77,9 +77,9 @@ export default function skillsWidget(
     return `
     <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"
     xmlns="http://www.w3.org/2000/svg">
-        ${buildCard(width, height, '#FFFFFF')}
+        ${buildCard(width, height, '#18191A')}
         <g id="header-text" transform="translate(60 60)">
-            <text id="skills" transform="translate(0 44)" font-size="42" font-family="Roboto-Medium, Roboto, sans-serif" font-weight="500">
+            <text id="skills" transform="translate(0 44)" fill="#E4E6EB" font-size="42" font-family="Roboto-Medium, Roboto, sans-serif" font-weight="500">
                 <tspan x="0" y="0">Skills</tspan>
             </text>
             <text id="languages" transform="translate(0 83)" fill="#bfbfbf" font-size="24" font-family="Roboto-Regular, Roboto, sans-serif">
