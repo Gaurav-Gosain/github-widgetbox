@@ -14,6 +14,8 @@ export default async function profileWidget(
 ): Promise<string> {
     const dataOptions: Array<string> = data.split(',')
 
+    console.log(`[Profile Widget] Fetching data for ${username}`)
+
     // Return error if dataOptions argument is undefined
     if (dataOptions === undefined) {
         return new Promise<string>((res) => {
@@ -52,6 +54,8 @@ export default async function profileWidget(
             process.env.GITHUB_TOKEN,
             username
         )
+
+        console.log(profile)
 
         const stargazers: number[] = []
         profile.data.user.repositories.nodes.forEach(
@@ -174,10 +178,10 @@ export default async function profileWidget(
                                             <image width="200" height="200" xlink:href="data:image/jpeg;base64,${avatar}"/>
                                         </pattern>
                                     </defs>
-                                    ${buildCard(width, height, '#FFFFFF')}
+                                    ${buildCard(width, height, '#18191A')}
                                     <g id="profile-card">
                                         <rect id="profile-image" width="65" height="65" rx="30" transform="translate(52 47)" fill="url(#pattern)"/>
-                                        <text id="text-name" data-name="text-name" transform="translate(145 78)" font-size="26" font-family="Roboto-Medium, Roboto, sans-serif" font-weight="500"><tspan x="0" y="0">${
+                                        <text id="text-name" fill="#E4E6EB" data-name="text-name" transform="translate(145 78)" font-size="26" font-family="Roboto-Medium, Roboto, sans-serif" font-weight="500"><tspan x="0" y="0">${
                                             response.data.name === null
                                                 ? response.data.login
                                                 : response.data.name
