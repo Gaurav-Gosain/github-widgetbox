@@ -5,6 +5,7 @@
     "main": "public/api/index.js",
     "scripts": {
         "dev": "nodemon api/index.ts",
+        "local": "tsc",
         "build": "rm -rf ./public && tsc",
         "start": "npm run build && node public/api/index.js"
     },
