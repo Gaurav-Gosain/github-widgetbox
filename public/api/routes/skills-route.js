@@ -15,11 +15,11 @@ router.get('/', function (req, res) {
     res.setHeader('Content-Type', 'image/svg+xml');
     // Check if languages argument is not present
     if (names === undefined || names === null) {
-        res.send(error_1.default('Skills', '-24%', 'Languages are undefined!', '-28%'));
+        res.send((0, error_1.default)('Skills', '-24%', 'Languages are undefined!', '-28%'));
         return;
     }
     // Grab the Skills widget
-    res.send(skills_1.default(String(names), utils_1.getBoolean(String(includeNames))));
+    res.send((0, skills_1.default)(String(names), (0, utils_1.getBoolean)(String(includeNames))));
 });
 exports.default = router;
 //# sourceMappingURL=skills-route.js.map

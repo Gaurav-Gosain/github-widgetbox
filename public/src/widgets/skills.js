@@ -11,7 +11,7 @@ const languages_1 = __importDefault(require("../data/languages"));
 function skillsWidget(skillsString, includeNames) {
     const skillList = skillsString.split(',');
     if (skillList === undefined) {
-        return error_1.default('Skills', '-24%', 'Languages are undefined!', '-28%');
+        return (0, error_1.default)('Skills', '-24%', 'Languages are undefined!', '-28%');
     }
     const width = 812;
     const height = 344 +
@@ -20,7 +20,7 @@ function skillsWidget(skillsString, includeNames) {
     function getBoxes() {
         let boxes = '';
         for (let i = 0; i < skillList.length; i++) {
-            let foundData = utils_1.findData(languages_1.default, skillList[i]);
+            let foundData = (0, utils_1.findData)(languages_1.default, skillList[i]);
             if (foundData === undefined) {
                 foundData = {
                     name: [''],
@@ -35,7 +35,7 @@ function skillsWidget(skillsString, includeNames) {
             const row = Math.floor(i / 7);
             const transX = 102 * (i - row * 7);
             const transY = 114 * row + (includeNames && row > 0 ? 25 * row : 0);
-            boxes += gradient_box_1.default(i, foundData.colorFrom, foundData.colorTo, transX, transY);
+            boxes += (0, gradient_box_1.default)(i, foundData.colorFrom, foundData.colorTo, transX, transY);
             boxes +=
                 foundData.icon != 'Undefined'
                     ? `<g transform="translate(${transX + (80 - foundData.width) / 2} ${transY + (80 - foundData.height) / 2})">` +
@@ -57,7 +57,7 @@ function skillsWidget(skillsString, includeNames) {
     return `
     <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"
     xmlns="http://www.w3.org/2000/svg">
-        ${card_1.default(width, height, '#FFFFFF')}
+        ${(0, card_1.default)(width, height, '#FFFFFF')}
         <g id="header-text" transform="translate(60 60)">
             <text id="skills" transform="translate(0 44)" font-size="42" font-family="Roboto-Medium, Roboto, sans-serif" font-weight="500">
                 <tspan x="0" y="0">Skills</tspan>
