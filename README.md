@@ -26,10 +26,10 @@ Show off your profile with some interesting statistics. Perfect for profile READ
 
 &data=followers,repositories,stars,commits           
 :-------------------------:
-[![GitHub WidgetBox](https://gh-widgetbox.vercel.app/api/profile?username=Gaurav-Gosain&data=followers,repositories,stars,commits)](https://github.com/Jurredr/github-widgetbox)
+[![GitHub WidgetBox](https://gh-widgetbox.vercel.app/api/profile?username=Gaurav-Gosain&data=followers,repositories,stars,commits)](https://github.com/Gaurav-Gosain/github-widgetbox)
 
 ```md
-[![GitHub WidgetBox](https://gh-widgetbox.vercel.app/api/profile?username=Gaurav-Gosain&data=followers,repositories,stars,commits)](https://github.com/Jurredr/github-widgetbox)
+[![GitHub WidgetBox](https://gh-widgetbox.vercel.app/api/profile?username=Gaurav-Gosain&data=followers,repositories,stars,commits)](https://github.com/Gaurav-Gosain/github-widgetbox)
 ```
 
 <br/><br/>
